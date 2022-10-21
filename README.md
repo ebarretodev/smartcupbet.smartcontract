@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ebarretodev/SmartCupBet.frontend">
-    <img src="public/logo512.png" alt="Logo" width="80" height="80">
+    <img src="images/logo512.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Smart Cup Bet</h3>
@@ -74,8 +74,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This is project is inspired on Bet Sports House, but without manipulated results and automatic checkout at the end of game. On this part has the entire project ot 
 
