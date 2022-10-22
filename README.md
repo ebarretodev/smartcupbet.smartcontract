@@ -83,7 +83,7 @@ This is project is inspired on Bet Sports House, but without manipulated results
 
 ### Built With
 
-* [![React][React.js]][React-url]
+* [![Solidity][Solidity-shield]][Solidity-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -147,3 +147,5 @@ Project Link: [https://github.com/ebarretodev/SmartCupBet.frontend](https://gith
 [product-screenshot]:images/Browser.jpg
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+[Solidity-shield]: https://img.shields.io/badge/Solidity-20232A?style=for-the-badge&logo=solidity&logoColor=D0D1D3
+[Solidity-url]: https://docs.soliditylang.org/en/v0.8.17/index.html
