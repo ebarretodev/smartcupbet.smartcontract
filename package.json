@@ -6,6 +6,10 @@
   "author": "Eliabel Barreto",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "node":"yarn hardhat node",
+    "compile":"yarn hardhat compile"
+  },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
     "@nomiclabs/hardhat-etherscan": "^3.1.1",

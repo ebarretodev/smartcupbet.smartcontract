@@ -32,4 +32,4 @@ const updateContractAddresses = async ()=>{
     fs.writeFileSync(FRONT_END_ADDRESSES_FILE, JSON.stringify(contractAddress))
 }
 
-module.exports.tags = ["all", "frontend"]
+module.exports.tags = ["frontend"]
