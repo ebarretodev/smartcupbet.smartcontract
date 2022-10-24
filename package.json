@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "node":"yarn hardhat node",
+    "node-dev":"cls && yarn hardhat clean && yarn hardhat node",
     "compile":"yarn hardhat compile"
   },
   "devDependencies": {
