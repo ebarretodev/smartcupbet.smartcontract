@@ -7,17 +7,17 @@ const { verify } = require("../utils/verify")
 const CONTRACT_NAME = "SmartCupBet" // insert here the name of your contract
 
 module.exports = async function ({ getNamedAccounts, deployments }) {
-    const { deploy, log } = deployments
+    const { deploy, log, get } = deployments
     const { deployer } = await getNamedAccounts()
     const chainId = network.config.chainId
 
     let maticUsdPriceFeedAddress
 
     if (developmentChains.includes(network.name)) {
-        const ethUsdAggregator = await get("MockV3Aggregator")
-        maticUsdPriceFeedAddress = ethUsdAggregator.address
+        const maticUsdAggregator = await get("MockV3Aggregator")
+        maticUsdPriceFeedAddress = maticUsdAggregator.address
     } else {
-        maticUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]
+        maticUsdPriceFeedAddress = networkConfig[chainId]["maticUsdPriceFeed"]
     }
 
     const args = [maticUsdPriceFeedAddress]
