@@ -10,7 +10,17 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
     const { deploy, log } = deployments
     const { deployer } = await getNamedAccounts()
     const chainId = network.config.chainId
-    const args = []
+
+    let maticUsdPriceFeedAddress
+
+    if (developmentChains.includes(network.name)) {
+        const ethUsdAggregator = await get("MockV3Aggregator")
+        maticUsdPriceFeedAddress = ethUsdAggregator.address
+    } else {
+        maticUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]
+    }
+
+    const args = [maticUsdPriceFeedAddress]
 
     const contract = await deploy(CONTRACT_NAME, {
         from: deployer,
