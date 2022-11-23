@@ -58,6 +58,7 @@ contract SmartCupBet {
     }
 
     struct GrandPrize {
+        uint256 totalPrize;
         uint256 firstPrize;
         uint256 secondPrize;
         uint256 thirdPrize;
@@ -93,7 +94,7 @@ contract SmartCupBet {
     uint256 private ContractOwnerValues;
 
     /** Events */
-    event BetEntered();
+    event BetEntered(uint8 indexed matchNumber,Odds odds);
 
     /** Modifiers */
     modifier onlyOwner() {
@@ -127,14 +128,16 @@ contract SmartCupBet {
         if (msg.value.getConversionRate(s_priceFeed) < MINIMUM_USD_ENTRANCE_FEE) {
             revert SmartCupBet__NotEnoughtFunds();
         }
-        //  add the values to "internal wallets" amount to current match (70%), grand prize(20%), contract owner(10%)
-        s_GrandPrize.firstPrize += (msg.value * 20 * 40) / (100 * 100);
-        s_GrandPrize.secondPrize += (msg.value * 20 * 20) / (100 * 100);
-        s_GrandPrize.thirdPrize += (msg.value * 20 * 10) / (100 * 100);
+        //  add the values to "internal wallets" amount to current match (75%), grand prize(20%), contract owner(5%)
+        
+        matchValueBets[_matchNumber] += (msg.value * 75) / 100;
+
+        s_GrandPrize.totalPrize += (msg.value * 20 * 70) / (100 * 100);
+
         s_GrandPrize.allPrize += (msg.value * 20 * 15) / (100 * 100);
+
         ContractOwnerValues += (msg.value * 20 * 15) / (100 * 100);
-        matchValueBets[_matchNumber] += (msg.value * 70) / 100;
-        ContractOwnerValues += (msg.value * 10) / 100;
+        ContractOwnerValues += (msg.value * 5) / 100;
 
         // insert the values match to table of user
         matchBetRegister[msg.sender][_matchNumber] = Match(
@@ -145,9 +148,15 @@ contract SmartCupBet {
             _penaltyTeamB
         );
         // TODO insert the values choice winner (TeamA, TeamB, Draw) to match array
-
         // TODO update the odds values for current match
+        if(_teamA == _teamB){
+            if(_matchNumber < 49){
+
+            }
+        }
+
         // TODO emit event EnterBet at the end to FrontEnd Recalculate the page
+        // emit EnterBet(oddsMatch[_matchNumber]);
     }
 
     // function to close matches
