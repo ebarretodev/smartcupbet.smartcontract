@@ -75,7 +75,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is project is inspired on Bet Sports House, but without manipulated results and automatic checkout at the end of game. On this part has the entire project ot 
+SmartCupBet is a web3 betting game for 2022 FIFA’s World Cup that comprehends two simultaneous  competitions at once: the match by match betting, with automatic checkout at the end of each match, and the sweepstake bet, that will reward the highest three scorers with the gran final prize. 
+
+The match by match betting works like any other betting game, with odds ratio for win, loss and draw. In the sweepstake competition, users indicate their score prediction and win points depending of the events results. Both competitions run in parallel and the user only needs to bet once per match.    
+
+The prize for both competitions is a percentage of the Total Value Locked summed by each fixed bet (3 USD). SmartCupBet doesn’t manipulate the odds nor has any house edge calculation to potencialize its profits, as the objective of this project is to make the blockchain/web3 environment more real, fun and accesible for ordinary people.   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
